@@ -13,7 +13,6 @@ public class SnakeLadder {
     }
         public static void main (String[] args) {
         System.out.println("Welcome to Snake and Ladder Game");
-
             int positionA = 0;
 
             while(positionA < MAX_POSITION) {
@@ -29,12 +28,16 @@ public class SnakeLadder {
 
                     case LADDER:
                         positionA += dice;
+                        if(positionA > MAX_POSITION) {
+                            positionA = positionA-dice;
+                        }
                         break;
 
                     case SNAKE:
                         positionA -= dice;
-                        if(positionA < MIN_POSITION )
+                        if(positionA < MIN_POSITION ) {
                             positionA = 0;
+                        }
                         break;
                 }
                 System.out.println("end : "+positionA);
