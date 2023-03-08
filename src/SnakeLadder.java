@@ -14,13 +14,15 @@ public class SnakeLadder {
         public static void main (String[] args) {
         System.out.println("Welcome to Snake and Ladder Game");
             int positionA = 0;
+            int diceCount = 0;
 
             while(positionA < MAX_POSITION) {
 
                 int dice = getRandomInteger(7,1);
-                System.out.println("dice : "+dice);
+                diceCount ++;
+//			System.out.println("dice : "+dice);
                 int checkPlay = (int) Math.floor(Math.random()*10)%3;
-                System.out.println("checkplay : "+checkPlay);
+//			System.out.println("checkplay : "+checkPlay);
 
                 switch(checkPlay) {
                     case NO_PLAY:
@@ -40,7 +42,8 @@ public class SnakeLadder {
                         }
                         break;
                 }
-                System.out.println("end : "+positionA);
+                System.out.println("Position after Die Roll "+diceCount+" : "+positionA);
             }
+            System.out.println("Total Dice Rolls : "+diceCount);
     }
 }
